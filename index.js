@@ -4,10 +4,6 @@
 var eachNode = require("pegjs-each-node")
 
 function eachCode(ast, callback) {
-  if (ast.initializer) {
-    callback(ast.initializer, [], null)
-  }
-
   ast.rules.forEach(function(rule) {
     eachNode(rule.expression, function(node, parent) {
       if ("code" in node) {

@@ -7,15 +7,6 @@ pegjs-each-code [![Build Status](https://travis-ci.org/lydell/pegjs-each-code.pn
 var eachCode = require("pegjs-each-code")
 
 eachCode(ast, function(node, labels, ruleName) {
-  // This function will be run once with `ast.initializer` (if it exists), and
-  // then once for each node with a `code` property, such as “action”, “semantic
-  // and” and “semantic not” nodes.
-  //
-  // `labels` is an array of all the labels that are available to the code snippet.
-  //
-  // `ruleName` is the name of the rule that the code snippet occurs in, or
-  // `null` if `node` is the initializer.
-
   try {
     node.code = compile(node.code, {locals: labels})
   } catch (error) {
@@ -23,6 +14,18 @@ eachCode(ast, function(node, labels, ruleName) {
   }
 })
 ```
+
+- The function passed to `eachCode` will be run once for each node with a
+  `code` property, such as “action”, “semantic and” and “semantic not” nodes,
+  [except the initializer](changelog.md#why-not-the-initializer).
+
+- `labels` is an array of all the labels that are available to the code
+  snippet.
+
+- `ruleName` is the name of the rule that the code snippet occurs in.
+
+`eachCode` is useful when making a plugin for a compile-to-js language (such as
+CoffeeScript and TypeScript) or a linter.
 
 
 License

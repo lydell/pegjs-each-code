@@ -56,11 +56,4 @@ describe("eachCode", function() {
     ])
   })
 
-
-  it("works with an initializer", function() {
-    test(read("initializer.pegjs"), [
-      ["init", [], null]
-    ])
-  })
-
 })
