@@ -1,4 +1,4 @@
-### Version 0.2.0 (Unreleased) ###
+### Version 0.2.0 (2014-08-01) ###
 
 - Changed: The initializer (if any) is now always ignored.
   (Backwards-incompatible change.)
