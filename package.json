@@ -22,15 +22,17 @@
     "lint"
   ],
   "scripts": {
-    "test": "jshint index.js test/index.js && mocha"
+    "lint": "standard --global it --global describe",
+    "unit": "mocha",
+    "test": "npm run lint && npm run unit"
   },
   "dependencies": {
     "pegjs-each-node": "~0.2.0"
   },
   "devDependencies": {
-    "mocha": "^1.17.1",
-    "jshint": "^2.4.4",
     "chai": "^1.9.0",
-    "pegjs": "~0.9.0"
+    "mocha": "^1.17.1",
+    "pegjs": "~0.9.0",
+    "standard": "^5.2.1"
   }
 }

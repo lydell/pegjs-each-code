@@ -27,6 +27,8 @@ eachCode(ast, function(node, labels, ruleName) {
 `eachCode` is useful when making a plugin for a compile-to-js language (such as
 CoffeeScript and TypeScript) or a linter.
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 
 License
 =======
