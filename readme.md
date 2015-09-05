@@ -4,13 +4,15 @@ pegjs-each-code [![Build Status](https://travis-ci.org/lydell/pegjs-each-code.sv
 `npm install pegjs-each-code`
 
 ```js
-var eachCode = require("pegjs-each-code")
+var eachCode = require('pegjs-each-code')
 
 eachCode(ast, function(node, labels, ruleName) {
   try {
     node.code = compile(node.code, {locals: labels})
   } catch (error) {
-    throw new Error([ruleName, error.message, "{" + node.code + "}"].join("\n\n"))
+    var pos = eachCode.getFilePosition(node, error)
+    throw new Error('Line ' + pos.line + ', column ' + pos.column +
+                    ' (in rule "' + ruleName + '"): ' + error.message)
   }
 })
 ```
@@ -26,6 +28,11 @@ eachCode(ast, function(node, labels, ruleName) {
 
 `eachCode` is useful when making a plugin for a compile-to-js language (such as
 CoffeeScript and TypeScript) or a linter.
+
+If such a processor throws an error, use `eachCode.getFilePosition(node, {line:
+Number, column: Number})` to make the line and column of the error relative to
+the entire file, rather than to `node` (the code snippet). It returns an object
+with a `line` and a `column` property.
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 

@@ -28,4 +28,13 @@ function getLabels (node, parent) {
   }
 }
 
+function getFilePosition (node, pos) {
+  return {
+    line: node.location.start.line + pos.line - 1,
+    column: pos.column + (pos.line === 1 ? node.location.start.column : 0)
+  }
+}
+
+eachCode.getFilePosition = getFilePosition
+
 module.exports = eachCode

@@ -51,3 +51,25 @@ describe('eachCode', function () {
     ])
   })
 })
+
+describe('eachCode.getFilePosition', function () {
+  it('is a function', function () {
+    expect(eachCode.getFilePosition).to.be.a('function')
+  })
+
+  it('returns node-relative position relative to the entire file', function () {
+    // Note: these examples are taken from grammar.pegjs.
+
+    var node1 = {location: {start: {line: 4, column: 24}}}
+    var error1 = {line: 1, column: 9}
+    expect(eachCode.getFilePosition(node1, error1)).to.deep.equal(
+      {line: 4, column: 33}
+    )
+
+    var node2 = {location: {start: {line: 19, column: 85}}}
+    var error2 = {line: 2, column: 12}
+    expect(eachCode.getFilePosition(node2, error2)).to.deep.equal(
+      {line: 20, column: 12}
+    )
+  })
+})
