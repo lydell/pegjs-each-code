@@ -1,4 +1,4 @@
-pegjs-each-code [![Build Status](https://travis-ci.org/lydell/pegjs-each-code.png?branch=master)](https://travis-ci.org/lydell/pegjs-each-code)
+pegjs-each-code [![Build Status](https://travis-ci.org/lydell/pegjs-each-code.svg?branch=master)](https://travis-ci.org/lydell/pegjs-each-code)
 ===============
 
 `npm install pegjs-each-code`
