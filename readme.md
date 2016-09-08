@@ -1,3 +1,8 @@
+**DEPRECATED.** Use `peg.compiler.visitor` added in [PEG.js 0.10.0] instead.
+
+[PEG.js 0.10.0]: https://github.com/pegjs/pegjs/blob/4a49e910ac6b57c9cd2362f997ac24df529fcebb/CHANGELOG.md#minor-changes
+
+
 pegjs-each-code [![Build Status](https://travis-ci.org/lydell/pegjs-each-code.svg?branch=master)](https://travis-ci.org/lydell/pegjs-each-code)
 ===============
 

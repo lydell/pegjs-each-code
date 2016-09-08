@@ -1,3 +1,7 @@
+### Version 0.3.1 (2016-09-08) ###
+
+- Deprecated the package.
+
 ### Version 0.3.0 (2015-09-05) ###
 
 - Added: `eachCode.getFilePosition()`. Requires pegjs 0.9.0.
